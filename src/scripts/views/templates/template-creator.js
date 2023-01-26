@@ -2,15 +2,15 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantListTemplate = (restaurants) => `
 <div class="resto-item">
-<div class="resto-item__header">
-  <img class="resto-item__header__poster lazyload" alt="${restaurants.name} image"
-      data-src="${restaurants.pictureId ? CONFIG.BASE_IMAGE_URL + restaurants.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
-</div>
-<div class="resto-item__content">
-  <h5>${restaurants.city}</h5>
-  <h3><a href="/#/detail/${restaurants.id}">${restaurants.name}</a></h3><p class="rating">Rating ⭐️ ${restaurants.rating}</p>
-  <p>${restaurants.description}</p>
-</div>
+  <div class="resto-item__header">
+    <img class="resto-item__header__poster lazyload" alt="${restaurants.name} image"
+        data-src="${restaurants.pictureId ? CONFIG.BASE_IMAGE_URL + restaurants.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+  </div>
+  <div class="resto-item__content">
+    <h5>${restaurants.city}</h5>
+    <h3 class="resto__title"><a href="/#/detail/${restaurants.id}">${restaurants.name}</a></h3><p class="rating">Rating ⭐️ ${restaurants.rating}</p>
+    <p>${restaurants.description}</p>
+  </div>
 </div>
 `;
 

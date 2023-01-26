@@ -1,27 +1,16 @@
 import FavoriteMovieIdb from '../../data/favorite-movie-idb';
-import { createRestaurantListTemplate } from '../templates/template-creator';
+import FavoriteMovieSearchView from './liked-movies/favorite-movie-search-view';
+import FavoriteMovieShowPresenter from './liked-movies/favorite-movie-show-presenter';
+
+const view = new FavoriteMovieSearchView();
 
 const Favorite = {
-
-  async render() {
-    return `
-      <div class="content" id="favoriteKonten">
-        <h2 class="content__heading">Your Liked Restaurant</h2>
-        <div id="restos" class="restos">
- 
-        </div>
-      </div>
-    `;
-  },
-
-  async afterRender() {
-    const favData = await FavoriteMovieIdb.getAllMovies();
-    const moviesContainer = document.querySelector('#restos');
-
-    favData.forEach((resto) => {
-      moviesContainer.innerHTML += createRestaurantListTemplate(resto);
-    });
-  },
+	async render() {
+		return view.getTemplate();
+	},
+	async afterRender() {
+		new FavoriteMovieShowPresenter({ view, favoriteMovies: FavoriteMovieIdb });
+	}
 };
 
 export default Favorite;

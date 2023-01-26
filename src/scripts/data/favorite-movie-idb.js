@@ -32,7 +32,13 @@ const FavoriteMovieIdb = {
   },
 
   async searchRestaurant(query) {
-    
+    return (await this.getAllMovies()).filter((resto) => {
+      const loweredCaseMovieTitle = (resto.title || '-').toLowerCase();
+      const jammedMovieTitle = loweredCaseMovieTitle.replace(/\s/g, '');
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+      return jammedMovieTitle.indexOf(jammedQuery) !== -1;
+    });
   },
 };
 
