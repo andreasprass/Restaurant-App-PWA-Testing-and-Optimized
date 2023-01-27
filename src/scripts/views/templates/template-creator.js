@@ -17,7 +17,7 @@ const createRestaurantListTemplate = (restaurants) => `
 const createRestaurantDetailTemplate = (resto) => `
   <h2 class="resto__title">${resto.name}</h2>
 
-  <img class="resto__poster lazyload" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : resto.pictureId}" />
+  <img class="resto__poster lazyload" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : resto.pictureId}" alt="${resto.name} image"/>
   
   <div class="resto__info">
     <h3>Restaurant Details</h3>
