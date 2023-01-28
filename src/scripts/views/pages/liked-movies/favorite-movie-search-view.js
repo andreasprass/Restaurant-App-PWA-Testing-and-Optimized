@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { createRestaurantListTemplate } from '../../templates/template-creator';
 
 class FavoriteMovieSearchView {

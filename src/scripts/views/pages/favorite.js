@@ -5,12 +5,13 @@ import FavoriteMovieShowPresenter from './liked-movies/favorite-movie-show-prese
 const view = new FavoriteMovieSearchView();
 
 const Favorite = {
-	async render() {
-		return view.getTemplate();
-	},
-	async afterRender() {
-		new FavoriteMovieShowPresenter({ view, favoriteMovies: FavoriteMovieIdb });
-	}
+  async render() {
+    return view.getTemplate();
+  },
+  async afterRender() {
+    // eslint-disable-next-line no-new
+    new FavoriteMovieShowPresenter({ view, favoriteMovies: FavoriteMovieIdb });
+  },
 };
 
 export default Favorite;

@@ -1,7 +1,6 @@
 import TheMovieDbSource from '../../data/themoviedb-source';
 import { createRestaurantListTemplate } from '../templates/template-creator';
 
-
 const List = {
 
   async render() {

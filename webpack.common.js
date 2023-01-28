@@ -4,7 +4,7 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: {
@@ -83,7 +83,7 @@ module.exports = {
           globOptions: {
             // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
             ignore: ['**/images/**'],
-          }
+          },
         },
       ],
     }),
